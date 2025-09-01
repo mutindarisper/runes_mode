@@ -23,7 +23,7 @@
 
     function increment() {
         count += 1
-    }
+    } 
 
     function changeTitle() {
         person.jobTitle = "Frontend Engineer"
