@@ -1,0 +1,22 @@
+.pulse-marker {
+    width: 20px;
+    height: 20px;
+    background: #1e90ff; /* Blue dot */
+    border: 3px solid white; /* White ring */
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite ease-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 50px rgba(59, 130, 246, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+  }
+  

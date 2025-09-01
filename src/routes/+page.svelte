@@ -1,6 +1,6 @@
 <script lang="ts">
     import axios from "axios";
-    import Map from "$lib/components/Map.svelte";
+    import Map from "$lib/components/map/Map.svelte";
     import Search from "$lib/components/Search.svelte";
     import "../app.css"
 
