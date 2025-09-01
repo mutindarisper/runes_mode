@@ -21,7 +21,7 @@
 
     $effect(() => {
         if (!MAPBOX_TOKEN) {
-            console.error('VITE_MAPBOX_TOKEN is not set');
+            console.error('VITE_MAPBOX_TOKEN is not set'); 
             return;
         }
 
