@@ -8,7 +8,8 @@
     type GeoJSONFeature = { type: 'Feature'; properties: Record<string, any>; geometry: GeoJSONGeometry; bbox?: number[] };
     type GeoJSONFeatureCollection = { type: 'FeatureCollection'; licence: string; features: GeoJSONFeature[] };
 
-    let { searchResults }: { searchResults: GeoJSONFeatureCollection | null } = $props();
+    let { searchResults, selectedLayer = $bindable([]) }: { searchResults: GeoJSONFeatureCollection | null; selectedLayer: string[] } = $props();
+   
 
     let mapContainer: HTMLDivElement;
     let map: mapboxgl.Map;
@@ -159,7 +160,24 @@
 
     })
 
-    //effect to update marker when user position changes
+    //effect to update selected layer
+  
+    $effect(() => {
+  console.log(
+    "Effect triggered - mapLoaded:", 
+    mapLoaded, 
+    "selectedLayer:", 
+    JSON.stringify(selectedLayer)
+  );
+
+  if (Array.isArray(selectedLayer) && selectedLayer.length > 0) {
+    console.log("Active layers:", selectedLayer.join(", "));
+  } else {
+    console.log("No layers selected");
+  }
+});
+
+
     
 
 $effect(() => {  
@@ -185,4 +203,4 @@ $effect(() => {
 
 </script>
 
-<div bind:this={mapContainer} class="h-[70vh] w-full rounded-md m-4"></div>
+<div bind:this={mapContainer} class="h-full w-full"></div>
