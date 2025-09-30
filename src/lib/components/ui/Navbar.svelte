@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
 
 
 </script>
@@ -12,11 +13,16 @@
     </div>
 
     <div class="flex items-center gap-4">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/settings">Settings</a>
+      <a href="/add">Add</a>
       <button >
         Alerts
       </button>
       <button >
        Risper
       </button>
+      
     </div>
   </header>
